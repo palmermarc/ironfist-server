@@ -84,7 +84,9 @@ Class core
 	function get_character_raider_io( $region, $server, $character_name ) {
 		$ch = curl_init();
 
-		curl_setopt($ch, CURLOPT_URL, "https://raider.io/api/v1/characters/profile?region={$region}&realm={$server}&name={$character_name}");
+    $raider_io_url = "https://raider.io/api/v1/characters/profile?region={$region}&realm={$server}&name=" . urlencode( $character_name );
+
+		curl_setopt($ch, CURLOPT_URL, $raider_io_url );
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
