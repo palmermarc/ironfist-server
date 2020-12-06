@@ -1,3 +1,5 @@
 
 .idea/ifserver.iml
 .idea/modules.xml
+members/*
+roster.json
